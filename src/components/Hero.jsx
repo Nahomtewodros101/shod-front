@@ -27,34 +27,34 @@ const Hero = () => {
           }
         });
       },
-      { threshold: 0.1 } // Trigger when at least 10% of the component is visible
+      { threshold: 0.1 }
     );
 
     observer.observe(imgRef.current);
     observer.observe(textRef.current);
 
     return () => {
-      observer.disconnect(); // Cleanup observer on component unmount
+      observer.disconnect();
     };
   }, []);
 
   return (
     <div
-      className="h-[100vh] space-x-[20rem] mr-[10rem] rounded-sm font-Londrina bg-center scroll-smooth flex items-center justify-center"
+      className="h-[100vh] px-4 md:space-x-[20rem] md:mr-[10rem] rounded-sm font-Londrina bg-center scroll-smooth flex flex-col md:flex-row items-center justify-center"
       id="hero"
     >
       <img
         ref={imgRef}
-        className="w-[50rem] opacity-0" // Start with hidden opacity
+        className="w-[20rem] md:w-[50rem] opacity-0"
         src={shoppin}
         alt="shoppin"
       />
       <section
         ref={textRef}
-        className="text-5xl font-extrabold rounded-2xl font-Londrina m-3 bg-gradient-to-r from-zinc-500 to-zinc-300 p-8 md:p-[5rem] flex flex-col items-center justify-center opacity-0 shadow-2xl shadow-zinc-700 space-y-8" // Start with hidden opacity
+        className="text-3xl md:text-5xl font-extrabold rounded-2xl font-Londrina mt-8 md:m-3 bg-gradient-to-r from-zinc-500 to-zinc-300 p-6 md:p-[5rem] flex flex-col items-center justify-center opacity-0 shadow-2xl shadow-zinc-700 space-y-4 md:space-y-8"
       >
         About Chama™
-        <p className="text-xl">
+        <p className="text-lg md:text-xl text-center">
           Chama is your ultimate online destination for stylish and comfortable
           footwear. Offering a curated selection of the latest trends and
           timeless classics, Chama caters to shoe lovers of all tastes and
