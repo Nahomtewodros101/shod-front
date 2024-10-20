@@ -6,6 +6,7 @@ import Products from "./components/Products";
 import WhatsNew from "./components/WhatsNew";
 import Account from "./components/Account";
 
+import Register from "./components/Register";
 function App() {
   return (
     <Router>
@@ -16,6 +17,8 @@ function App() {
           <Route path="/whats-new" element={<WhatsNew />} />
           <Route path="/hero" element={<Hero />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/landingpage" element={<LandingPage />} />
+          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
     </Router>

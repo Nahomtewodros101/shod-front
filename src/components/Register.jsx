@@ -29,10 +29,10 @@ const Register = ({ onRegister }) => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md mx-auto mt-8 p-4 bg-white shadow-md rounded-md"
+      className="max-w-md mx-[20rem] h-[45vh] w-[60vw]  mt-8 p-10 justify-center items-center bg-[#d8d7d7] shadow-2xl rounded-md"
     >
-      <h2 className="text-2xl font-semibold mb-4">Register</h2>
-      {message && <p className="text-red-500">{message}</p>}
+      <h2 className="text-2xl font-semibold mb-4 text-center">Register</h2>
+      {message && <p className="text-red-500 font-Arima">{message}</p>}
       <div className="mb-4">
         <label className="block mb-2">Email:</label>
         <input
@@ -41,7 +41,8 @@ const Register = ({ onRegister }) => {
           onChange={(e) => setEmail(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
           required
-        />
+          placeholder="Your Email..."
+          />
       </div>
       <div className="mb-4">
         <label className="block mb-2">Username:</label>
@@ -51,7 +52,8 @@ const Register = ({ onRegister }) => {
           onChange={(e) => setUsername(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
           required
-        />
+          placeholder="Your Username..."
+          />
       </div>
       <div className="mb-4">
         <label className="block mb-2">Password:</label>
@@ -61,6 +63,7 @@ const Register = ({ onRegister }) => {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
           required
+          placeholder="Your Password..."
         />
       </div>
       <div className="mb-4">
@@ -76,7 +79,7 @@ const Register = ({ onRegister }) => {
       </div>
       <button
         type="submit"
-        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+        className="bg-zinc-500 text-white py-2 px-4 rounded  hover:bg-black"
       >
         Register
       </button>

@@ -1,22 +1,32 @@
 import React from "react";
 import Login from "./Login";
-import Register from "./Register"; 
+import Register from "./Register";
+import { Link } from "react-router-dom";
 
 const Account = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-      <h1 className="text-3xl font-bold mb-8">Account</h1>
-      <div className="flex space-x-8">
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">Login</h2>
+    <section className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+      <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-8">Account</h1>
+
+      <div className="mb-6 sm:mb-8">
+        <Link
+          to="/products"
+          className="bg-[#d8d7d7] hover:bg-white text-black font-bold py-2 px-3 sm:px-4 rounded transition duration-300"
+        >
+          Shop
+        </Link>
+      </div>
+
+      <div className="flex flex-col md:flex-row w-full max-w-xl justify-center space-y-6 md:space-y-0 md:space-x-8 items-center">
+        <div className="w-full md:w-auto">
           <Login />
         </div>
-        <div>
-          <h2 className="text-2xl font-semibold mb-4">Register</h2>
+
+        <div className="w-full md:w-auto">
           <Register />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

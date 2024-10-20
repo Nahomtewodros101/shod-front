@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import shoppin from "../utils/shopping.png";
-
+import { Link } from "react-router-dom";
 const Hero = () => {
   const imgRef = useRef(null);
   const textRef = useRef(null);
@@ -65,6 +65,14 @@ const Hero = () => {
           you take is in style!
         </p>
       </section>
+        <div className="absolute top-[10rem]">
+          <Link
+            to="/products"
+            className="bg-gradient-to-r from-zinc-500 to-zinc-300 rounded-3xl text-black hover:bg-black hover:text-white font-bold w-[2rem] py-2 px-10  transition duration-300"
+          >
+            Shop
+          </Link>
+        </div>
     </div>
   );
 };

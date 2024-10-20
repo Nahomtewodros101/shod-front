@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
-
+import { Link } from "react-router-dom";
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -23,7 +23,11 @@ const Products = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="text-center text-black font-Arima h-[2orem] rounded-2xl bg-transparent font-bold">
+        Loading...
+      </div>
+    );
   }
 
   return (
@@ -31,43 +35,63 @@ const Products = () => {
       id="products"
       className="min-h-[100vh] bg-[#d8d7d7] rounded-sm font-Londrina flex flex-col items-center justify-top scroll-smooth px-4"
     >
-      <nav className="bg-gradient-to-r from-zinc-500 to-zinc-300 text-black p-[2rem] shadow-2xl shadow-zinc-700 rounded-3xl m-2 top-1 fixed w-[90%] md:w-[40rem] z-50">
+      <nav className="bg-gradient-to-r from-zinc-500 to-zinc-300 text-black p-[2rem] shadow-2xl shadow-zinc-700 rounded-3xl m-2 top-1 fixed w-full max-w-[90rem] mx-auto z-50">
         <ul className="flex flex-row justify-center items-center space-x-4 md:space-x-[6rem]">
           <li>
-            <a
-              href="#whatsnew"
+            <Link
+              to="/landingpage"
               className="text-lg md:text-xl font-medium relative group"
             >
-              See Whats New
+              Home
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#products"
+            <Link
+              to="/products"
               className="text-lg md:text-xl font-medium relative group"
             >
               Shop
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/"
+            <Link
+              to="/whatsnew"
               className="text-lg md:text-xl font-medium relative group"
             >
-              <FontAwesomeIcon icon={faShoppingCart} />
+              See Whats New
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="#account"
+            <Link
+              to="/account"
               className="text-lg md:text-xl font-medium relative group"
             >
               Account
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
-            </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/hero"
+              className="text-lg md:text-xl font-medium relative group"
+            >
+              What Is Chama?
+              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+            </Link>
+          </li>
+
+          <li>
+            <Link
+              to="/"
+              className="text-lg md:text-xl font-medium relative group"
+            >
+              <FontAwesomeIcon icon={faShoppingCart} />
+              <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+            </Link>
           </li>
         </ul>
       </nav>

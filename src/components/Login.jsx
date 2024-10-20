@@ -26,9 +26,9 @@ const Login = ({ onLogin }) => {
     <form
     id="Login"
       onSubmit={handleSubmit}
-      className="max-w-md mx-[20rem] h-[40vh] mt-8 p-4 justify-center items-center bg-[#d8d7d7] shadow-2xl rounded-md"
+      className="max-w-md mx-[20rem] h-[45vh] w-[60vw]  mt-8 p-20 justify-center items-center bg-[#d8d7d7] shadow-2xl rounded-md"
     >
-      <h2 className="text-2xl font-semibold mb-4">Login</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-center">Login</h2>
       {message && <p className="text-red-500">{message}</p>}
       <div className="mb-4">
         <label className="block mb-2">Email:</label>
@@ -38,6 +38,7 @@ const Login = ({ onLogin }) => {
           onChange={(e) => setEmail(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
           required
+           placeholder="Your Email..."
         />
       </div>
       <div className="mb-4">
@@ -48,11 +49,12 @@ const Login = ({ onLogin }) => {
           onChange={(e) => setPassword(e.target.value)}
           className="w-full p-2 border border-gray-300 rounded"
           required
+           placeholder="Your Password..."
         />
       </div>
       <button
         type="submit"
-        className="bg-zinc-500 text-white py-2 px-4 rounded hover:bg-blue-700"
+        className="bg-zinc-500 text-white py-2 px-4 rounded hover:bg-black"
       >
         Login
       </button>
