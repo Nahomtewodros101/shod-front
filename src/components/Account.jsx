@@ -2,11 +2,20 @@ import React from "react";
 import Login from "./Login";
 import Register from "./Register";
 import { Link } from "react-router-dom";
+import pic from "../utils/Sign.png";
 
 const Account = () => {
   return (
-    <section className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-8">Account</h1>
+    <section className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4 overflow-x-hidden">
+      <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 sm:mb-8">
+        Account
+      </h1>
+
+      <img
+        className="w-[10rem] sm:w-[15rem] md:w-[20rem] h-auto mb-6"
+        src={pic}
+        alt="sign in"
+      />
 
       <div className="mb-6 sm:mb-8">
         <Link

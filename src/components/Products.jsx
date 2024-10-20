@@ -3,6 +3,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+
 const Products = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -10,7 +11,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get("https://localhost:5001/api/products");
+        const response = await axios.get("http://localhost:5001/api/products");
         setProducts(response.data);
         setLoading(false);
       } catch (error) {
@@ -24,7 +25,7 @@ const Products = () => {
 
   if (loading) {
     return (
-      <div className="text-center text-black font-Arima h-[2orem] rounded-2xl bg-transparent font-bold">
+      <div className="text-center text-black font-Arima h-[2rem] rounded-2xl bg-transparent font-bold">
         Loading...
       </div>
     );
@@ -35,7 +36,7 @@ const Products = () => {
       id="products"
       className="min-h-[100vh] bg-[#d8d7d7] rounded-sm font-Londrina flex flex-col items-center justify-top scroll-smooth px-4"
     >
-      <nav className="bg-gradient-to-r from-zinc-500 to-zinc-300 text-black p-[2rem] shadow-2xl shadow-zinc-700 rounded-3xl m-2 top-1 fixed w-full max-w-[90rem] mx-auto z-50">
+      <nav className=" bg-[#d8d7d7] text-black p-[2rem] shadow-2xl shadow-zinc-700 rounded-3xl m-2 top-1 fixed w-full max-w-[90rem] mx-auto z-50">
         <ul className="flex flex-row justify-center items-center space-x-4 md:space-x-[6rem]">
           <li>
             <Link
@@ -73,7 +74,6 @@ const Products = () => {
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </li>
-
           <li>
             <Link
               to="/hero"
@@ -83,7 +83,6 @@ const Products = () => {
               <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
             </Link>
           </li>
-
           <li>
             <Link
               to="/"
@@ -106,7 +105,7 @@ const Products = () => {
         {products.map((product) => (
           <div
             key={product._id}
-            className="bg-white p-6 rounded-lg shadow-lg flex flex-col items-center"
+            className="bg-white p-6 rounded-lg shadow-2xl shadow-zinc-600 flex flex-col items-center"
           >
             <img
               src={product.imageUrl}
@@ -116,7 +115,7 @@ const Products = () => {
             <h2 className="text-2xl font-bold mb-2">{product.name}</h2>
             <p className="text-gray-700 mb-4">{product.description}</p>
             <p className="text-lg font-semibold">${product.price}</p>
-            <button className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-300">
+            <button className="mt-4 bg-black text-white py-2 px-4 rounded hover:bg-zinc-700 transition duration-300">
               Add to Cart
             </button>
           </div>
